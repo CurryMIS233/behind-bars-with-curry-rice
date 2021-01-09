@@ -16,6 +16,8 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+from crimes.views import all_rapes
+
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+    url(r'^demo/', all_rapes),
 ]

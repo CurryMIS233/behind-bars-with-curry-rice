@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo to test BE</title>
+</head>
+<body>
+<h2>Demo</h2>
+
+<p>We have {{ rape_list | length }}</p>
+
+<ul>
+    {% for rape in rape_list%}
+        <li>Area: {{ rape.area}},
+            Year: {{ rape.year }},
+            Count: {{ rape.count }}
+        </li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>
