@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Demo to test BE</title>
+    </head>
+    <body>
+        <h2>Analyze Results</h2>
+
+        <ul>
+            {% for crime in crimes%}
+            <li>Area: {{ crime.area}}, Year: {{ crime.year }}, Count: {{ crime.count }}</li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
