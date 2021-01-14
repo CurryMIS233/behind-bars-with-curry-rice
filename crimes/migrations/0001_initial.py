@@ -30,15 +30,6 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.CreateModel(
-            name='Rape',
-            fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('area', models.TextField()),
-                ('year', models.IntegerField()),
-                ('count', models.IntegerField()),
-            ],
-        ),
-        migrations.CreateModel(
             name='SeriousFraud',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
@@ -48,7 +39,7 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.CreateModel(
-            name='SexualHarassment',
+            name='AgainstWomen',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('area', models.TextField()),

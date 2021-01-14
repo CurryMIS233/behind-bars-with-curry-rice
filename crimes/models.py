@@ -5,7 +5,22 @@ from django.db import models
 
 # Create your models here.
 
-class Rape(models.Model):
+# class Murder_victim_age_sex(models.Model):
+#     Area_Name = models.TextField()
+#     Year = models.TextField()
+#     Group_Name = models.TextField()
+#     Sub_Group_Name = models.TextField()
+#     Loss_of_Property_1_10_Crores = models.TextField()
+#     Loss_of_Property_10_25_Crores = models.TextField()
+#     Loss_of_Property_25_50_Crores = models.TextField()
+#     Loss_of_Property_50_100_Crores = models.TextField()
+#     Loss_of_Property_Above_100_Crores = models.TextField()
+#
+#     def __str__(self):
+#         return self.Area_Name
+
+
+class AgainstWomen(models.Model):
     area = models.TextField()
     year = models.IntegerField()
     count = models.IntegerField()
@@ -13,13 +28,6 @@ class Rape(models.Model):
     def __str__(self):
         return self.area
 
-class SexualHarassment(models.Model):
-    area = models.TextField()
-    year = models.IntegerField()
-    count = models.IntegerField()
-
-    def __str__(self):
-        return self.area
 
 class AutoTheft(models.Model):
     area = models.TextField()
@@ -29,6 +37,7 @@ class AutoTheft(models.Model):
     def __str__(self):
         return self.area
 
+
 class SeriousFraud(models.Model):
     area = models.TextField()
     year = models.IntegerField()
@@ -36,6 +45,7 @@ class SeriousFraud(models.Model):
 
     def __str__(self):
         return self.area
+
 
 class Murder(models.Model):
     area = models.TextField()

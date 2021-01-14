@@ -11,10 +11,8 @@ def analyze(request):
     if request.GET['crimeType']:
         crimeType = request.GET['crimeType']
         crimes = []
-        if crimeType == 'Rape':
-            crimes = Rape.objects.all()
-        elif crimeType == 'SexualHarassment':
-            crimes = SexualHarassment.objects.all()
+        if crimeType == 'AgainstWomen':
+            crimes = AgainstWomen.objects.all()
         elif crimeType == 'AutoTheft':
             crimes = AutoTheft.objects.all()
         elif crimeType == 'SeriousFraud':
