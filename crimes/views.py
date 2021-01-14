@@ -11,9 +11,20 @@ import pandas as pd
 
 
 def area_crime_chart(request):
+    def crime_type_to_readable_crime_type(crime_type):
+        if crime_type == 'AgainstWomen':
+            return 'Crimes against women'
+        elif crime_type == 'AutoTheft':
+            return 'Auto theft'
+        elif crime_type == 'SeriousFraud':
+            return 'Serious fraud'
+        elif crime_type == 'Murder':
+            return 'Murder'
+
     area = request.GET['area']
     crime_type = request.GET['crime_type']
     crimes = []
+
     if crime_type == 'AgainstWomen':
         crimes = AgainstWomen.objects.filter(area=area)
     elif crime_type == 'AutoTheft':
@@ -27,13 +38,13 @@ def area_crime_chart(request):
     counts = list(map(lambda crime: crime.count, crimes))
 
     bar_chart = px.bar(crimes, x=years, y=counts,
-                        title=area + " - " + crime_type)
+                       title=crime_type_to_readable_crime_type(crime_type) + " in " + area + " between 2001-2010", labels={'x': 'Year', 'y': 'Number of crimes'})
     plot = pio.to_html(bar_chart, include_plotlyjs=False, full_html=False)
 
-    return render(request, 'area_crime_chart.html', {'area': area, 'crime_type': crime_type, 'crimes': crimes, 'plot': plot})
+    return render(request, 'area_crime_chart.html', {'plot': plot})
 
 
-def analyze(request):
+def select_area(request):
     if request.GET['crime_type']:
         crime_type = request.GET['crime_type']
         areas = []
@@ -57,8 +68,8 @@ def analyze(request):
         else:
             print('Error! Make sure you are reuqestiong an existing crime type!')
 
-        return render(request, 'index-results.html', {'areas': areas, 'crime_type': crime_type})
+        return render(request, 'select_area.html', {'areas': areas, 'crime_type': crime_type})
 
 
-def index(request):
-    return render(request, "index.html")
+def select_crime(request):
+    return render(request, "select_crime.html")

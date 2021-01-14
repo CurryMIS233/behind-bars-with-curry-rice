@@ -1,0 +1,17 @@
+{% extends "base.html" %} {% block content %}
+<div class="container col-6">
+    <h1>Select an area to continue</h1>
+    <br />
+    <form class="form-horizontal" action="/analyze" method="get">
+        <div class="form-group">
+            <input type="text" value="{{crime_type}}" class="d-none" name="crime_type" />
+            <select class="form-control" name="area">
+                {% for area in areas%}
+                <option value="{{ area }}">{{ area }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+</div>
+{% endblock %}

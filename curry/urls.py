@@ -16,10 +16,10 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from crimes.views import index, analyze, area_crime_chart
+from crimes.views import select_crime, select_area, area_crime_chart
 
 urlpatterns = [
-    url(r'^analyze/area/', area_crime_chart),
-    url(r'^analyze/', analyze),
-    url(r'^', index),
+    url(r'^select_area', select_area),
+    url(r'^analyze', area_crime_chart),
+    url(r'^', select_crime),
 ]

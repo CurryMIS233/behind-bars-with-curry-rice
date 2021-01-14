@@ -1,0 +1,17 @@
+{% extends "base.html" %} {% block content %}
+<div class="container col-6">
+    <h1>Choose crime type</h1>
+    <br />
+    <form class="form-horizontal" action="/select_area" method="get">
+        <div class="form-group">
+            <select class="form-control" name="crime_type">
+                <option value="AgainstWomen">Against Women</option>
+                <option value="AutoTheft">Auto Theft</option>
+                <option value="SeriousFraud">Serious Fraud</option>
+                <option value="Murder">Murder</option>
+            </select>
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+</div>
+{% endblock %}
